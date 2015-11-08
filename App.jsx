@@ -21,7 +21,7 @@ App = React.createClass({
 		return {
 			tasks: Tasks.find(query, {sort: {createdAt: -1}}).fetch(),
 			incompleteCount: Tasks.find({checked: {$ne: true}}).count(),
-			currentUser: Meteor.user()
+			currentUser: Meteor.user() // can check if user is logged in
 		};
 	},
 
@@ -41,6 +41,7 @@ App = React.createClass({
 			text: text,
 			createdAt: new Date(), // JS timestamp
 			owner: Meteor.userId(), // _id of the user logged in
+			// username: Meteor.userId()
 			username: Meteor.user().username // username of user logged in
 		});
 
@@ -59,20 +60,26 @@ App = React.createClass({
 	render(){
 		return (
 				// Structure of the HTML for todo list
-				<div className="container">
+				<div className="container col s12 m6">
+					<div className="footer-container"></div>
 					<header>
-						<h1>Todo List ({this.data.incompleteCount})</h1>
+						<h4><i className="small material-icons list">list</i>Note Composer <span className="new badge">({this.data.incompleteCount})</span></h4	>
+						<h5>Simple mobile note maker.</h5 >
 
-						<label className="hide-completed">
-							<input type="checkbox" readOnly={true} checked={this.state.hideCompleted} onClick={this.toggleHideCompleted} />
-							Hide Completed Tasks
-						</label>
+						<div className="col s8 offset-s2">
+							<input id="check-button" type="checkbox" readOnly={true} checked={this.state.hideCompleted} onClick={this.toggleHideCompleted} />
+							<label htmlFor="check-button" className="hide-completed">
+								Hide Completed Tasks
+							</label>
+						</div>
 
-						<AccountsUIWrapper />
-						// only show when logged in
+							<span><i className="tiny material-icons perm_identity">perm_identity</i></span>
+							<AccountsUIWrapper />
+							
 						{ this.data.currentUser ?
 							<form className="new-task" onSubmit={this.handleSubmit} >
-								<input type="text" ref="textInput" placeholder="Type your todo here ..." />
+								<input type="text" id="note" ref="textInput" placeholder="Type your note here ..." />
+								<label htmlFor="note" ></label>
 							</form> : ''
 						}
 					</header>
@@ -80,6 +87,8 @@ App = React.createClass({
 					<ul>
 						{this.renderTasks()}
 					</ul>
+
+					<div className="footer-container"></div>
 				</div>
 			);
 	}

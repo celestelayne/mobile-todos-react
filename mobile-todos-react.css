@@ -1,4 +1,22 @@
 /* CSS declarations go here */
+
+/*---------->> CSS RESET <<----------*/
+
+*{
+  margin: 0;
+  padding: 0; 
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*---------->> GLOBAL CSS <<----------*/
+
+html {
+  height: 100%;
+}
+
 body {
   font-family: sans-serif;
   background-color: #315481;
@@ -18,30 +36,60 @@ body {
 }
 
 .container {
-  max-width: 600px;
   margin: 0 auto;
   min-height: 100%;
   background: white;
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  background: #FFC107;
+  /*background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);*/
   padding: 20px 15px 15px 15px;
   position: relative;
+  height: 250px;
 }
 
-#login-buttons {
-  display: block;
-}
-
-h1 {
-  font-size: 1.5em;
+h4 {
+  /*display: inline;*/
+  color: #FFFFFF;
   margin: 0;
   margin-bottom: 10px;
-  display: inline-block;
   margin-right: 1em;
 }
+
+h5 {
+  color: #FFECB3;
+  margin-bottom: 20px;
+}
+
+span.badge.new {
+    background-color: #FF4081;
+}
+
+header .hide-completed {
+  font-size: 14px;
+  color: #FFECB3;
+}
+
+input[placeholder] {
+  color: white;
+}
+
+input#note {
+  color: white;
+}
+
+/*label {
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+label::before {
+  content: '';
+}*/
+
+/*---------->> NOTES INPUT FIELD <<----------*/
 
 form {
   margin-top: 10px;
@@ -63,6 +111,64 @@ form {
   outline: 0;
 }
 
+input[type=text]:focus:not([readonly]) {
+  border-bottom:1px solid #FF4081; 
+  box-shadow:0 1px 0 0 #FF4081;
+}
+
+/* label underline focus color */
+/*input[type=text]:focus {
+ border-bottom: 1px solid #b71c1c;
+ box-shadow: 0 1px 0 0 #000;
+}*/
+
+/*---------->> LOGIN <<----------*/
+
+#login-buttons {
+  display: block;
+}
+
+#login-dropdown-list {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+}
+
+.accounts-dialog {
+  border-radius: 0;
+  border: 1px solid #FF4081;
+  background: #FF4081;
+  color: #F2F2F2;
+}
+
+#login-buttons .login-button, 
+.accounts-dialog .login-button {
+  background: #FFC107;
+  border: 1px solid #FFC107;
+  border-radius: 2px;
+}
+
+#login-buttons input[type=password], 
+.accounts-dialog input[type=password] {
+  padding: 6px;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  line-height: 1.2;
+  background: #FFFFFF;
+}
+
+#login-buttons .login-button:hover,
+.accounts-dialog .login-button:hover {
+  background: #FFA000;
+  border: 1px solid #FFA000;
+}
+
+a#login-name-link {
+  text-decoration: none;
+}
+
+/*---------->> TASKS <<----------*/
+
 ul {
   margin: 0;
   padding: 0;
@@ -71,9 +177,9 @@ ul {
 
 .delete {
   float: right;
-  font-weight: bold;
+  /*font-weight: bold;*/
   background: none;
-  font-size: 1em;
+  /*font-size: 1em;*/
   border: none;
   position: relative;
 }
@@ -82,7 +188,7 @@ li {
   position: relative;
   list-style: none;
   padding: 15px;
-  border-bottom: #eee solid 1px;
+  border-bottom: #B6B6B6 solid 1px;
 }
 
 li .text {
@@ -97,20 +203,49 @@ li.checked .text {
   text-decoration: line-through;
 }
 
+[type="checkbox"]:not(:checked), 
+[type="checkbox"]:checked{
+/*  position: absolute;
+  left: 15px;
+  visibility: hidden; 
+  z-index: 100;
+  width: 20px;
+  height: 18px;
+  top: 18px;*/
+}
+
+[type="checkbox"]+label:before{
+  border: 2px solid #FF4081;
+}
+
+[type="checkbox"]:checked+label:before {
+  border-right: 2px solid #FF4081;
+  border-bottom: 2px solid #FF4081;
+}
+
 li.private {
   background: #eee;
   border-color: #ddd;
-}
-
-header .hide-completed {
-  float: right;
 }
 
 .toggle-private {
   margin-left: 5px;
 }
 
+/*---------->> FOOTER <<----------*/
+.footer-container {
+  height: 20px;
+  background-color: #FFA000;
+}
+
+/*---------->> MEDIA QUERIES <<----------*/
+
 @media (max-width: 600px) {
+
+  .container {
+    width: 100%;
+  }
+
   li {
     padding: 12px 15px;
   }

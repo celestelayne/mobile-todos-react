@@ -23,15 +23,18 @@ Task = React.createClass({
 		return (
 			// individual todos
 			<li className={taskClassName}>
+
 				<button className="delete" onClick={this.deleteThisTask}>
-					&times;
+					<i className="small material-icons delete">delete</i>
 				</button>
 
-				<input type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />
+				<input id="task-box" type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />
 
-				<span className="text">
-					<strong>{this.props.task.username}</strong>: {this.props.task.text}
-				</span>
+				<label htmlFor="task-box">
+					<span className="text">
+						<strong>{this.props.task.username}</strong>: {this.props.task.text}
+					</span>
+				</label>
 			</li>
 		);
 	}
