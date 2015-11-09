@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #315481;
   background-image: linear-gradient(to bottom, #315481, #918e82 100%);
   background-attachment: fixed;
@@ -39,22 +39,26 @@ body {
   margin: 0 auto;
   min-height: 100%;
   background: white;
+  letter-spacing: 1.2px;
 }
 
 header {
   background: #FFC107;
-  /*background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);*/
-  padding: 20px 15px 15px 15px;
+  padding: 20px 30px 15px 30px;
   position: relative;
   height: 250px;
 }
 
 h4 {
-  /*display: inline;*/
   color: #FFFFFF;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-right: 1em;
+  text-transform: uppercase;
+}
+
+h4.bee-icon{
+  background-image: url(public/bee-icon.png);
 }
 
 h5 {
@@ -62,8 +66,13 @@ h5 {
   margin-bottom: 20px;
 }
 
+  form {
+    margin-top: 8%;
+  }
+
 span.badge.new {
-    background-color: #FF4081;
+    background-color: #00BCD4;
+    right: 30px;
 }
 
 header .hide-completed {
@@ -71,13 +80,37 @@ header .hide-completed {
   color: #FFECB3;
 }
 
-input[placeholder] {
-  color: white;
+label.hide-completed{
+  float: right;
 }
 
-input#note {
-  color: white;
+[type="checkbox"]:not(:checked), 
+[type="checkbox"]:checked{
+/*  position: absolute;
+  left: 15px;
+  visibility: hidden; 
+  z-index: 100;
+  width: 20px;
+  height: 18px;
+  top: 18px;*/
 }
+
+[type="checkbox"]+label:before{
+  border: 2px solid #00BCD4;
+}
+
+[type="checkbox"]:checked+label:before {
+  border-right: 2px solid #00BCD4;
+  border-bottom: 2px solid #00BCD4;
+}
+
+/*input[placeholder] {
+  color: white;
+}*/
+
+/*input#note {
+  color: white;
+}*/
 
 /*label {
   white-space: nowrap;
@@ -87,6 +120,37 @@ input#note {
 
 label::before {
   content: '';
+}*/
+
+/*---------->> HEXAGON PATTERN <<----------*/
+/*.hexagon {
+  width: 80px;
+  height: 40px;
+  background: rgba(225, 160, 0, 0.5);
+  position: relative;
+  margin: 15px;
+}
+.hexagon:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 25px solid #FFA000;
+}
+.hexagon:after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 25px solid #FFA000;
 }*/
 
 /*---------->> NOTES INPUT FIELD <<----------*/
@@ -116,11 +180,11 @@ input[type=text]:focus:not([readonly]) {
   box-shadow:0 1px 0 0 #FF4081;
 }
 
-/* label underline focus color */
-/*input[type=text]:focus {
- border-bottom: 1px solid #b71c1c;
- box-shadow: 0 1px 0 0 #000;
-}*/
+input#note[placeholder]{
+  color: white;
+  background: #FFA000;
+  text-indent: 20px;
+}
 
 /*---------->> LOGIN <<----------*/
 
@@ -164,6 +228,10 @@ input[type=text]:focus:not([readonly]) {
 }
 
 a#login-name-link {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: 1;
   text-decoration: none;
 }
 
@@ -191,7 +259,7 @@ li {
   border-bottom: #B6B6B6 solid 1px;
 }
 
-li .text {
+li .note {
   margin-left: 10px;
 }
 
@@ -199,28 +267,8 @@ li.checked {
   color: #888;
 }
 
-li.checked .text {
+li.checked .note {
   text-decoration: line-through;
-}
-
-[type="checkbox"]:not(:checked), 
-[type="checkbox"]:checked{
-/*  position: absolute;
-  left: 15px;
-  visibility: hidden; 
-  z-index: 100;
-  width: 20px;
-  height: 18px;
-  top: 18px;*/
-}
-
-[type="checkbox"]+label:before{
-  border: 2px solid #FF4081;
-}
-
-[type="checkbox"]:checked+label:before {
-  border-right: 2px solid #FF4081;
-  border-bottom: 2px solid #FF4081;
 }
 
 li.private {
@@ -244,6 +292,14 @@ li.private {
 
   .container {
     width: 100%;
+  }
+
+  h5 {
+    font-size: 1.6em;
+  }
+
+  form {
+    margin-top: 15%;
   }
 
   li {

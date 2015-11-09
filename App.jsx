@@ -32,6 +32,7 @@ App = React.createClass({
 	},
 
 	handleSubmit(event) {
+		console.log(event);
 		event.preventDefault();
 
 		var text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
@@ -63,25 +64,29 @@ App = React.createClass({
 				<div className="container col s12 m6">
 					<div className="footer-container"></div>
 					<header>
-						<h4><i className="small material-icons list">list</i>Note Composer <span className="new badge">({this.data.incompleteCount})</span></h4	>
-						<h5>Simple mobile note maker.</h5 >
+						<div className="hexagon"></div>
+							<h4>Buzzybee <span className="new badge">({this.data.incompleteCount})</span></h4	>
+							<h5>Simple mobile note maker.</h5 >
 
-						<div className="col s8 offset-s2">
-							<input id="check-button" type="checkbox" readOnly={true} checked={this.state.hideCompleted} onClick={this.toggleHideCompleted} />
-							<label htmlFor="check-button" className="hide-completed">
-								Hide Completed Tasks
-							</label>
-						</div>
+							<div className="col s8 offset-s2">
+								<input id="check-button" type="checkbox" readOnly={true} checked={this.state.hideCompleted} onClick={this.toggleHideCompleted} />
+								<label htmlFor="check-button" className="hide-completed">
+									Hide Completed Tasks
 
-							<span><i className="tiny material-icons perm_identity">perm_identity</i></span>
-							<AccountsUIWrapper />
+								</label>
 							
-						{ this.data.currentUser ?
-							<form className="new-task" onSubmit={this.handleSubmit} >
-								<input type="text" id="note" ref="textInput" placeholder="Type your note here ..." />
-								<label htmlFor="note" ></label>
-							</form> : ''
-						}
+									<div>
+										<AccountsUIWrapper />
+									</div>
+								</div>
+
+							{ this.data.currentUser ?
+								<form className="new-task" onSubmit={this.handleSubmit} >
+									<input type="text" id="note" ref="textInput" placeholder="Get busy typing ..." />
+									<label htmlFor="note" ></label>
+								</form> : ''
+							}
+
 					</header>
 
 					<ul>

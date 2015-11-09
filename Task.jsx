@@ -3,10 +3,12 @@ Task = React.createClass({
 		task: React.PropTypes.object.isRequired
 	},
 
-	toggleChecked() {
+	toggleChecked(event) {
+		console.log(event);
+		console.log(this.props.task._id);
 		// toggles todos between checked and unchecked
 		Tasks.update(this.props.task._id, {
-			$set: {checked: ! this.props.task.checked}
+			$set: {checked: !this.props.task.checked}
 		});
 	},
 
@@ -28,12 +30,12 @@ Task = React.createClass({
 					<i className="small material-icons delete">delete</i>
 				</button>
 
-				<input id="task-box" type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />
+				<input id="checkit" type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />
 
-				<label htmlFor="task-box">
-					<span className="text">
+				<label htmlFor="checkit" className="note">
+
 						<strong>{this.props.task.username}</strong>: {this.props.task.text}
-					</span>
+
 				</label>
 			</li>
 		);
