@@ -65,8 +65,8 @@ App = React.createClass({
 					<div className="footer-container"></div>
 					<header>
 						<div className="hexagon"></div>
-							<h4>Buzzybee <span className="new badge">({this.data.incompleteCount})</span></h4	>
-							<h5>Simple mobile note maker.</h5 >
+							<h4>Buzzybee <img src="bee-icon.png"></img><span className="new badge">({this.data.incompleteCount})</span></h4>
+							<h5>Simple mobile note maker.</h5>
 
 							<div className="col s8 offset-s2">
 								<input id="check-button" type="checkbox" readOnly={true} checked={this.state.hideCompleted} onClick={this.toggleHideCompleted} />

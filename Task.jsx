@@ -5,7 +5,6 @@ Task = React.createClass({
 
 	toggleChecked(event) {
 		console.log(event);
-		console.log(this.props.task._id);
 		// toggles todos between checked and unchecked
 		Tasks.update(this.props.task._id, {
 			$set: {checked: !this.props.task.checked}
@@ -15,6 +14,14 @@ Task = React.createClass({
 	deleteThisTask() {
 		// deletes todos from the list according to its unique id
 		Tasks.remove(this.props.task._id);
+	},
+
+	editThisTask(){
+		Tasks.edit(this.props.task._id, {
+			'keyup[name=todoItem]': function(event){
+				var todoItem = $(event.target).val();
+			}
+		});
 	},
 
 	// gets a description of the HTML that this component should display
@@ -34,8 +41,8 @@ Task = React.createClass({
 
 				<label htmlFor="checkit" className="note">
 
-						<strong>{this.props.task.username}</strong>: {this.props.task.text}
-
+						<span><strong>{this.props.task.username}</strong>: <input type="text" value={this.props.task.text} name="todoItem" />
+						</span>
 				</label>
 			</li>
 		);

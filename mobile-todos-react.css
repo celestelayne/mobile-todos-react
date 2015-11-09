@@ -57,8 +57,13 @@ h4 {
   text-transform: uppercase;
 }
 
-h4.bee-icon{
-  background-image: url(public/bee-icon.png);
+/*span.bee-icon{
+  background-image: url(/bee-icon.png);
+}*/
+
+img {
+  border: 0;
+  width: 4%;
 }
 
 h5 {
@@ -212,6 +217,12 @@ input#note[placeholder]{
   border-radius: 2px;
 }
 
+input#login-username {
+  background: FFFFFF;
+  border: 1px solid #fff;
+  border-radius: 2px;
+}
+
 #login-buttons input[type=password], 
 .accounts-dialog input[type=password] {
   padding: 6px;
@@ -296,6 +307,11 @@ li.private {
 
   h5 {
     font-size: 1.6em;
+  }
+
+  img {
+    border: 0;
+    width: 8%;
   }
 
   form {
