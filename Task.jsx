@@ -16,14 +16,6 @@ Task = React.createClass({
 		Tasks.remove(this.props.task._id);
 	},
 
-	editThisTask(){
-		Tasks.edit(this.props.task._id, {
-			'keyup[name=todoItem]': function(event){
-				var todoItem = $(event.target).val();
-			}
-		});
-	},
-
 	// gets a description of the HTML that this component should display
 	render() {
 
@@ -40,9 +32,7 @@ Task = React.createClass({
 				<input id="checkit" type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />
 
 				<label htmlFor="checkit" className="note">
-
-						<span><strong>{this.props.task.username}</strong>: <input type="text" value={this.props.task.text} name="todoItem" />
-						</span>
+						<strong>{this.props.task.username}</strong>: {this.props.task.text}
 				</label>
 			</li>
 		);
