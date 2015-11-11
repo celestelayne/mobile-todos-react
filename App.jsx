@@ -61,24 +61,13 @@ App = React.createClass({
 	render(){
 		return (
 				// Structure of the HTML for todo list
-				<div className="container col s12 m6">
-					<div className="footer-container"></div>
-					<header>
-						<div className="hexagon"></div>
-							<h4>Buzzybee <img src="bee-icon.png"></img><span className="new badge">({this.data.incompleteCount})</span></h4>
+				<div className="container">
+					<div className="footer-container">
+						<AccountsUIWrapper />
+					</div>
+					<header className="shadow">
+							<h4>Buzzybee <img src="bee-icon.png"></img></h4>
 							<h5>Simple mobile note maker.</h5>
-
-							<div className="col s8 offset-s2">
-								<input id="check-button" type="checkbox" readOnly={true} checked={this.state.hideCompleted} onClick={this.toggleHideCompleted} />
-								<label htmlFor="check-button" className="hide-completed">
-									Hide Completed Tasks
-
-								</label>
-							
-									<div>
-										<AccountsUIWrapper />
-									</div>
-								</div>
 
 							{ this.data.currentUser ?
 								<form className="new-task" onSubmit={this.handleSubmit} >
@@ -87,6 +76,14 @@ App = React.createClass({
 								</form> : ''
 							}
 
+							<div className="hide-tasks">
+								<input id="check-button" type="checkbox" readOnly={true} checked={this.state.hideCompleted} onClick={this.toggleHideCompleted} />
+								<label htmlFor="check-button" className="hide-completed">
+									Hide Completed Notes
+								</label>
+								<span className="new badge">{this.data.incompleteCount} New</span>
+							</div>
+
 					</header>
 
 					<ul>
@@ -94,6 +91,7 @@ App = React.createClass({
 					</ul>
 
 					<div className="footer-container"></div>
+
 				</div>
 			);
 	}

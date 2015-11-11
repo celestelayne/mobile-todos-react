@@ -26,7 +26,7 @@ Task = React.createClass({
 			<li className={taskClassName}>
 
 				<button className="delete" onClick={this.deleteThisTask}>
-					<i className="small material-icons delete">delete</i>
+					<i className="fa fa-trash-o fa-2x"></i>
 				</button>
 
 				<input id="checkit" type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />

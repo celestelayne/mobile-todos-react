@@ -18,9 +18,8 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   background-color: #315481;
-  /*background-image: linear-gradient(to bottom, #315481, #918e82 100%);*/
   background-attachment: fixed;
 
   position: absolute;
@@ -33,6 +32,7 @@ body {
   margin: 0;
 
   font-size: 14px;
+  font-weight: 400;
 }
 
 .container {
@@ -46,38 +46,50 @@ header {
   background: #FFC107;
   padding: 20px 30px 15px 30px;
   position: relative;
-  height: 250px;
+  height: 205px;
 }
 
 h4 {
   color: #FFFFFF;
   margin: 0;
-  margin-bottom: 20px;
+  letter-spacing: 1.5px;
   margin-right: 1em;
+  margin-top: 15px;
   text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
 }
 
-/*span.bee-icon{
-  background-image: url(/bee-icon.png);
-}*/
-
 img {
+  position: absolute;
   border: 0;
-  width: 4%;
+  width: 50px;
+  top: 3px;
+  left: 83%;
 }
 
 h5 {
-  color: #FFECB3;
+  font-weight: 400;
+  font-size: 18px;
+  color: #FFFFFF;
   margin-bottom: 20px;
+  letter-spacing: 0;
 }
 
-  form {
-    margin-top: 8%;
-  }
+form {
+  margin-top: 20px;
+}
+
+.hide-tasks {
+  margin-top: 20px;
+}
 
 span.badge.new {
-    background-color: #00BCD4;
-    right: 30px;
+  background-color: #00BCD4;
+  float: right;
+  padding: 0 5px;
+  border-radius: 9px;
 }
 
 header .hide-completed {
@@ -86,11 +98,12 @@ header .hide-completed {
 }
 
 label.hide-completed{
-  float: right;
+  margin-left: 10px;
 }
 
-[type="checkbox"]:not(:checked), 
-[type="checkbox"]:checked{
+input[type="checkbox"]:not(:checked), 
+input[type="checkbox"]:checked{
+  /*background: green;*/
 /*  position: absolute;
   left: 15px;
   visibility: hidden; 
@@ -127,36 +140,18 @@ label::before {
   content: '';
 }*/
 
-/*---------->> HEXAGON PATTERN <<----------*/
-/*.hexagon {
-  width: 80px;
-  height: 40px;
-  background: rgba(225, 160, 0, 0.5);
-  position: relative;
-  margin: 15px;
+.shadow {
+  -moz-box-shadow:    0 3px 5px 0 #ccc;
+  -webkit-box-shadow: 0 3px 5px 0 #ccc;
+  box-shadow:         0 3px 5px 0 #ccc;
 }
-.hexagon:before {
-  content: "";
-  position: absolute;
-  top: -25px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  border-bottom: 25px solid #FFA000;
+
+
+/*---------->> NAVIGATION BAR <<----------*/
+.footer-container {
+  height: 45px;
+  background-color: #FFA000;
 }
-.hexagon:after {
-  content: "";
-  position: absolute;
-  bottom: -25px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  border-top: 25px solid #FFA000;
-}*/
 
 /*---------->> NOTES INPUT FIELD <<----------*/
 
@@ -180,17 +175,22 @@ form {
   outline: 0;
 }
 
-input[type=text]:focus:not([readonly]) {
-  border-bottom:1px solid #FF4081; 
-  box-shadow:0 1px 0 0 #FF4081;
-}
-
 input#note[placeholder]{
   color: white;
-  background: #FFA000;
-  text-indent: 20px;
+  background: transparent;
+  text-indent: 15px;
+  border-bottom: 2px solid #FFA000;
 }
 
+input#check-button[type="checkbox" i] {
+  width: 15px;
+  height: 15px;
+  border-radius: 0;
+}
+
+input#checkit {
+  margin-left: 15px;
+}
 /*---------->> LOGIN <<----------*/
 
 #login-buttons {
@@ -199,12 +199,17 @@ input#note[placeholder]{
 
 #login-dropdown-list {
   position: absolute;
-  top: 15%;
-  left: 10%;
+  top: 40px;
+  left: -210px;
+  width: 320px;
+  height: 250px;
+}
 
-/*  top: -150px;
-  left: -30px;
-  width: 320px;*/
+#login-buttons 
+.login-link-and-dropdown-list {
+  float: right;
+  margin-right: 20px;
+  margin-top: 13px;
 }
 
 .accounts-dialog {
@@ -295,11 +300,14 @@ li.private {
   margin-left: 5px;
 }
 
-/*---------->> FOOTER <<----------*/
-.footer-container {
-  height: 20px;
-  background-color: #FFA000;
+input#checkit {
+  margin-left: 10px;
 }
+
+.fa-trash-o:before {
+    color: #FFA000;
+}
+
 
 /*---------->> MEDIA QUERIES <<----------*/
 
@@ -309,17 +317,16 @@ li.private {
     width: 100%;
   }
 
-  h5 {
-    font-size: 1.6em;
-  }
-
   img {
+    position: absolute;
     border: 0;
-    width: 8%;
+    width: 50px;
+    top: 3px;
+    left: 83%;
   }
 
   form {
-    margin-top: 15%;
+    margin-top: 20px;
   }
 
   li {
