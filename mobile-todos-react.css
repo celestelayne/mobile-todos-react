@@ -81,6 +81,20 @@ form {
   margin-top: 20px;
 }
 
+/*input[type=checkbox] {
+    display: none;
+}*/
+
+[name=todoItem] {
+  border: none;
+  font-size: 16px;
+}
+
+[name=todoItem]:focus { 
+  outline: none;
+
+}
+
 .hide-tasks {
   margin-top: 20px;
 }
@@ -101,26 +115,26 @@ label.hide-completed{
   margin-left: 10px;
 }
 
-input[type="checkbox"]:not(:checked), 
+/*input[type="checkbox"]:not(:checked), 
 input[type="checkbox"]:checked{
-  /*background: green;*/
-/*  position: absolute;
+  background: green;
+  position: absolute;
   left: 15px;
   visibility: hidden; 
   z-index: 100;
   width: 20px;
   height: 18px;
-  top: 18px;*/
-}
+  top: 18px;
+}*/
 
-[type="checkbox"]+label:before{
+/*input[type="checkbox"]+label:before{
   border: 2px solid #00BCD4;
-}
+}*/
 
-[type="checkbox"]:checked+label:before {
+/*input[type="checkbox"]:checked+label:before {
   border-right: 2px solid #00BCD4;
   border-bottom: 2px solid #00BCD4;
-}
+}*/
 
 /*input[placeholder] {
   color: white;
@@ -182,15 +196,15 @@ input#note[placeholder]{
   border-bottom: 2px solid #FFA000;
 }
 
-input#check-button[type="checkbox" i] {
+/*input#check-button[type="checkbox" i] {
   width: 15px;
   height: 15px;
   border-radius: 0;
-}
+}*/
 
-input#checkit {
+/*input#checkit {
   margin-left: 15px;
-}
+}*/
 /*---------->> LOGIN <<----------*/
 
 #login-buttons {
@@ -300,9 +314,9 @@ li.private {
   margin-left: 5px;
 }
 
-input#checkit {
+/*input#checkit {
   margin-left: 10px;
-}
+}*/
 
 .fa-trash-o:before {
     color: #FFA000;

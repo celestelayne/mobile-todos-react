@@ -11,6 +11,18 @@ Task = React.createClass({
 		});
 	},
 
+	getInitialState: function() {
+		return {
+			value: this.props.task.text
+		};
+	},
+
+	handleChange: function(event) {
+    this.setState({
+      value: event.target.value
+    });
+  },
+
 	deleteThisTask() {
 		// deletes todos from the list according to its unique id
 		Tasks.remove(this.props.task._id);
@@ -25,15 +37,16 @@ Task = React.createClass({
 			// individual todos
 			<li className={taskClassName}>
 
+
+				<label htmlFor="checkit" className="note">
+					<input id="checkit" type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />
+					<strong>{this.props.task.username}</strong>: <input type="text" value={this.state.value} onChange={this.handleChange} name="todoItem" />
+				</label>
+
 				<button className="delete" onClick={this.deleteThisTask}>
 					<i className="fa fa-trash-o fa-2x"></i>
 				</button>
 
-				<input id="checkit" type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />
-
-				<label htmlFor="checkit" className="note">
-						<strong>{this.props.task.username}</strong>: {this.props.task.text}
-				</label>
 			</li>
 		);
 	}
