@@ -1,6 +1,6 @@
-## BUZZYBEE -- The Simple ToDo Mobile Application
+## BUZZYBEE -- The Simple Mobile Note Maker
 
-BUZZYBEE [The Simple ToDo Mobile Application](http://mobile-todos-react.meteor.com) is a mobile web app that allows you create, edit, and view short notes -- like to-do lists. **For now you must log in to create a note**
+BUZZYBEE [The Simple Mobile Note Maker](http://mobile-todos-react.meteor.com) is a mobile web app that allows you create, edit, and view short notes -- like to-do lists. **For now you must log in to create a note**
 
 ### Technologies Used
 
@@ -18,11 +18,11 @@ BUZZYBEE was built using:
 
 ### Mobile Mockup (Sketch)
 **************************
-![](https://github.com/celestelayne/mobile-todos-react/blob/master/mobile-todos-mockup.png "Simple ToDo Mobile App")
+![](https://github.com/celestelayne/mobile-todos-react/blob/master/mobile-todos-mockup.png "The Simple Mobile Note Maker")
 
 ### Mobile GIF
 **************
-![](https://github.com/celestelayne/mobile-todos-react/blob/master/mobile-todos-react.gif "Simple ToDo Mobile App")
+![](https://github.com/celestelayne/mobile-todos-react/blob/master/mobile-todos-react.gif "The Simple Mobile Note Maker")
 
 ### Features
 
@@ -41,4 +41,4 @@ git clone https://github.com/celestelayne/mobile-todos-react.git && cd mobile-to
 meteor
 ```
 + See the app up and running on [localhost:3000](http://localhost:3000/)
-+ Alternatively, you can see the app live  [here](http://mobile-todos-react.meteor.com) on your mobile phone
++ Alternatively, you can see the app live [here](http://mobile-todos-react.meteor.com) on your mobile phone
