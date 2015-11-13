@@ -19,7 +19,7 @@ html {
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #315481;
+  /*background-color: #315481;*/
   background-attachment: fixed;
 
   position: absolute;
@@ -81,18 +81,12 @@ form {
   margin-top: 20px;
 }
 
-/*input[type=checkbox] {
-    display: none;
-}*/
-
 [name=todoItem] {
   border: none;
-  font-size: 16px;
 }
 
 [name=todoItem]:focus { 
   outline: none;
-
 }
 
 .hide-tasks {
@@ -104,6 +98,7 @@ span.badge.new {
   float: right;
   padding: 0 5px;
   border-radius: 9px;
+  color: white;
 }
 
 header .hide-completed {
@@ -115,45 +110,6 @@ label.hide-completed{
   margin-left: 10px;
 }
 
-/*input[type="checkbox"]:not(:checked), 
-input[type="checkbox"]:checked{
-  background: green;
-  position: absolute;
-  left: 15px;
-  visibility: hidden; 
-  z-index: 100;
-  width: 20px;
-  height: 18px;
-  top: 18px;
-}*/
-
-/*input[type="checkbox"]+label:before{
-  border: 2px solid #00BCD4;
-}*/
-
-/*input[type="checkbox"]:checked+label:before {
-  border-right: 2px solid #00BCD4;
-  border-bottom: 2px solid #00BCD4;
-}*/
-
-/*input[placeholder] {
-  color: white;
-}*/
-
-/*input#note {
-  color: white;
-}*/
-
-/*label {
-  white-space: nowrap;
-  cursor: pointer;
-  user-select: none;
-}
-
-label::before {
-  content: '';
-}*/
-
 .shadow {
   -moz-box-shadow:    0 3px 5px 0 #ccc;
   -webkit-box-shadow: 0 3px 5px 0 #ccc;
@@ -162,9 +118,18 @@ label::before {
 
 
 /*---------->> NAVIGATION BAR <<----------*/
+.navbar {
+  height: 45px;
+  background-color: #FFA000;
+}
+
 .footer-container {
   height: 45px;
   background-color: #FFA000;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 /*---------->> NOTES INPUT FIELD <<----------*/
@@ -196,25 +161,34 @@ input#note[placeholder]{
   border-bottom: 2px solid #FFA000;
 }
 
-/*input#check-button[type="checkbox" i] {
-  width: 15px;
-  height: 15px;
-  border-radius: 0;
-}*/
-
-/*input#checkit {
-  margin-left: 15px;
-}*/
 /*---------->> LOGIN <<----------*/
 
 #login-buttons {
   display: block;
 }
 
+a#login-sign-in-link {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a#signup-link {
+    text-transform: uppercase;
+}
+
+#login-buttons .login-close-text {
+    text-decoration: none;
+}
+
+#login-buttons #signup-link {
+    text-decoration: none;
+}
+
 #login-dropdown-list {
   position: absolute;
   top: 40px;
-  left: -210px;
+  left: -221px;
   width: 320px;
   height: 250px;
 }
@@ -228,8 +202,8 @@ input#note[placeholder]{
 
 .accounts-dialog {
   border-radius: 0;
-  border: 1px solid #FF4081;
-  background: #FF4081;
+  border: 1px solid #00BCD4;
+  background: #00BCD4;
   color: #F2F2F2;
 }
 
@@ -246,6 +220,10 @@ input#login-username {
   border-radius: 2px;
 }
 
+input#login-password {
+  color: #00BCD4;
+}
+
 #login-buttons input[type=password], 
 .accounts-dialog input[type=password] {
   padding: 6px;
@@ -255,10 +233,31 @@ input#login-username {
   background: #FFFFFF;
 }
 
+#login-buttons .login-button, 
+.accounts-dialog .login-button {
+    background: #FFC107;
+    border: 1px solid #FFC107;
+    border-radius: 2px;
+    width: 60%;
+    height: 40px;
+    line-height: 30px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+
 #login-buttons .login-button:hover,
 .accounts-dialog .login-button:hover {
   background: #FFA000;
   border: 1px solid #FFA000;
+  width: 60%;
+  height: 40px;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top: 8%;
+  margin-bottom: 5%;
 }
 
 a#login-name-link {
@@ -267,6 +266,12 @@ a#login-name-link {
   font-size: 1.2em;
   letter-spacing: 1;
   text-decoration: none;
+}
+
+#login-buttons input[type=text], 
+.accounts-dialog input[type=text] {
+    border: none;
+    color: #00BCD4;
 }
 
 /*---------->> TASKS <<----------*/
@@ -279,9 +284,7 @@ ul {
 
 .delete {
   float: right;
-  /*font-weight: bold;*/
   background: none;
-  /*font-size: 1em;*/
   border: none;
   position: relative;
 }
@@ -295,6 +298,7 @@ li {
 
 li .note {
   margin-left: 10px;
+  font-size: 1em;
 }
 
 li.checked {
@@ -305,21 +309,12 @@ li.checked .note {
   text-decoration: line-through;
 }
 
-li.private {
-  background: #eee;
-  border-color: #ddd;
-}
-
-.toggle-private {
-  margin-left: 5px;
-}
-
-/*input#checkit {
-  margin-left: 10px;
-}*/
-
 .fa-trash-o:before {
-    color: #FFA000;
+  color: #FFA000;
+}
+
+input#checkit {
+  margin-left: 15px;
 }
 
 
@@ -345,6 +340,7 @@ li.private {
 
   li {
     padding: 12px 15px;
+    border-bottom: #FFECB3 solid 1px;
   }
 
   .search {
@@ -355,4 +351,5 @@ li.private {
   .new-task input {
     padding-bottom: 5px;
   }
+
 }

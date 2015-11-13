@@ -62,16 +62,19 @@ App = React.createClass({
 		return (
 				// Structure of the HTML for todo list
 				<div className="container">
-					<div className="footer-container">
+
+					<div className="navbar">
 						<AccountsUIWrapper />
 					</div>
+
 					<header className="shadow">
+					
 							<h4>Buzzybee <img src="bee-icon.png"></img></h4>
 							<h5>Simple mobile note maker.</h5>
 
 							{ this.data.currentUser ?
 								<form className="new-task" onSubmit={this.handleSubmit} >
-									<input type="text" id="note" ref="textInput" placeholder="Get busy typing ..." />
+									<input type="text" id="note" ref="textInput" placeholder="Get buzzy typing ..." />
 									<label htmlFor="note" ></label>
 								</form> : ''
 							}

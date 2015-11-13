@@ -37,11 +37,9 @@ Task = React.createClass({
 			// individual todos
 			<li className={taskClassName}>
 
-
-				<label htmlFor="checkit" className="note">
-					<input id="checkit" type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />
-					<strong>{this.props.task.username}</strong>: <input type="text" value={this.state.value} onChange={this.handleChange} name="todoItem" />
-				</label>
+				<input id="checkit" type="checkbox" readOnly={true} checked={this.props.task.checked} onClick={this.toggleChecked} />
+					<label htmlFor="checkit" className="note"><strong>{this.props.task.username}</strong>: <input className="note" type="text" value={this.state.value} onChange={this.handleChange} name="todoItem" />
+					</label>
 
 				<button className="delete" onClick={this.deleteThisTask}>
 					<i className="fa fa-trash-o fa-2x"></i>
