@@ -22,6 +22,7 @@ BUZZYBEE was built using:
 
 ### Mobile GIF
 **************
+![](https://github.com/celestelayne/mobile-todos-react/blob/master/mobile-todos-react.gif "Simple ToDo Mobile App")
 
 ### Features
 
