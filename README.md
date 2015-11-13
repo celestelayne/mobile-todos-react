@@ -1,6 +1,6 @@
 ## BUZZYBEE -- The Simple ToDo Mobile Application
 
-BUZZYBEE [The Simple ToDo Mobile Application](http://mobile-todos-react.meteor.com) is a mobile web app that allows you create, edit, and view short notes -- like to-do lists.
+BUZZYBEE [The Simple ToDo Mobile Application](http://mobile-todos-react.meteor.com) is a mobile web app that allows you create, edit, and view short notes -- like to-do lists. **For now you must log in to create a note**
 
 ### Technologies Used
 
@@ -26,9 +26,9 @@ BUZZYBEE was built using:
 
 ### Features
 
++ Create your own user account with password *(dummy account name: maria, password: password)*
++ Create notes under your own account name
 + Notes are stored using browser local storage
-+ Buzzybee is usable on a standard mobile browser
-+ Users can create notes under their own account
 
 ### Installation & Usage
 #### Setup
