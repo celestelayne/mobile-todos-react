@@ -1,6 +1,6 @@
 ## BUZZYBEE -- The Simple Mobile Note Maker
 
-BUZZYBEE [The Simple Mobile Note Maker](http://mobile-todos-react.meteor.com) is a mobile web app that allows you create, edit, and view short notes -- like to-do lists. **For now you must log in to create a note**
+BUZZYBEE [The Simple Mobile Note Maker](secure-everglades-76078.herokuapp.com) is a mobile web app that allows you create, edit, and view short notes -- like to-do lists. **For now you must log in to create a note, create your own or use** *account name: maria, password: password*
 
 ### Technologies Used
 
@@ -13,6 +13,7 @@ BUZZYBEE was built using:
 </button>
 ```
 + Meteor -- a JavaScript web application *framework*
++ *Note: this app has been transferred from Meteor to Heroku / MLab*
 + ReactJS -- a JavaScript *library* for building user interfaces
 + GroundDB -- saves into localstorage
 
@@ -26,7 +27,7 @@ BUZZYBEE was built using:
 
 ### Features
 
-+ Create your own user account with password *(dummy account name: maria, password: password)*
++ Create your own user account with password or login *(dummy account name: maria, password: password)*
 + Create notes under your own account name
 + Notes are stored using browser local storage
 
