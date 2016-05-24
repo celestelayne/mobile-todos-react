@@ -1,6 +1,6 @@
 ## BUZZYBEE -- The Simple Mobile Note Maker
 
-BUZZYBEE [The Simple Mobile Note Maker](secure-everglades-76078.herokuapp.com) is a mobile web app that allows you create, edit, and view short notes -- like to-do lists. **For now you must log in to create a note, create your own or use** *account name: maria, password: password*
+BUZZYBEE [The Simple Mobile Note Maker](http://secure-everglades-76078.herokuapp.com) is a mobile web app that allows you create, edit, and view short notes -- like to-do lists. **For now you must log in to create a note, create your own or use** *account name: maria, password: password*
 
 ### Technologies Used
 
